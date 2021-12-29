@@ -30,18 +30,18 @@ function speak(){
     var synth = window.speechSynthesis;
     speak_data_1 = "The first prediction is " + prediction_1;
     speak_data_2 = "And the second prediction is " + prediction_2;
-    var utterThis = new SpeechSynthesisUtterance(speak_data_1 + speak_data_2)/
+    var utterThis = new SpeechSynthesisUtterance(speak_data_1 + speak_data_2);
     synth.speak(utterThis);
 }
 
 function check(){
-    img = document.getElementById('captured_image');
+    img = document.getElementById('capture_image');
     classifier.classify(img ,gotResult);
 }
 
 function gotResult(error, results) {
     if (error) {
-        console.log(results);
+        console.log(error);
     }
     else {
         console.log(results);
